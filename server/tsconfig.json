@@ -9,6 +9,7 @@
     "removeComments": true,
     "noEmitOnError": true,
     "lib": ["esnext"],
+    "esModuleInterop": true,
   },
   "include": ["./src"]
 }
