@@ -1,21 +1,18 @@
-import "reflect-metadata";
+import  Express  from "express";
+import MOvieRouter from "./routes/MovieRoutes";
+import bodyParser from "body-parser";
+import UploadRouter from "./routes/UploadRoutes";
+const app = Express();
 
-import {MovieModel} from "./db/db";
-import { Movie } from "./entities/Movie";
-import { MovieService } from "./services/movieService";
+app.use(bodyParser.json())
 
-const random = (min,max)=>{
-    let ran = max - min;
-    return Math.floor(Math.random()*ran);
-}
+app.use('/upload',Express.static('public/upload'))
 
-const cond:any = {
-    page:1,
-    limit:0,
-    key:`10`
-}
+app.use('/api/upload',UploadRouter)
 
-MovieService.find(cond).then(res=>{
-    console.log(res);
-    
-})
+app.use('/api/movie',MOvieRouter)
+
+
+app.listen(5501);
+
+

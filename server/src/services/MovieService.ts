@@ -31,7 +31,7 @@ export class MovieService {
             //代表输入数据有错误
             return errs;
         }
-        //3.删除操作
+        //3.更新操作
          await MovieModel.updateOne({_id:id}, movie);
          return errs
     }

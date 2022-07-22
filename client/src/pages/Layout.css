@@ -1,0 +1,10 @@
+.layout-root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.content {
+    padding: 1em;
+    overflow: auto;
+}
